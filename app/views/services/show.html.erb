@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12 portfolio-item">
+
+
+
+          <div class="portfolio-caption">
+            <h4><%= @service.title %></h4>
+            <p class="text-muted">Description:<%= @service.description %></p>
+            <p class="text-muted">Status:<%= @service.status %></p>
+
+            <p><%= link_to 'Edit', edit_service_path(@service) %> | <%= link_to 'Back', services_path %></p>
+
+
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+
+

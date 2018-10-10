@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Abouts Data</h1>
+<div class="link">
+<%= link_to 'Add New Content',  new_about_path %>
+
+</div>
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+      <% @abouts.each do |about| %>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+
+
+
+          <div class="portfolio-caption">
+            <h4><%= about.title %></h4>
+            <p class="text-muted">Description:<%= about.description %></p>
+            <p class="text-muted">Status:<%= about.status %></p>
+
+            <%=link_to image_tag(about.image.url, :alt => "", :class => "img-fluid") , about.image.url, target: '_blank' %>
+
+
+
+            <p><%= link_to 'Show',about %></p>
+            <p><%= link_to 'Edit', edit_about_path(about) %></p>
+            <p><%= link_to 'Destroy', about, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+          </div>
+
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+  </div>
+  <%= will_paginate @abouts%>
+</section>
+
+
+
+

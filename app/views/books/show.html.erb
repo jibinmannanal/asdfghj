@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12 col-sm-12 portfolio-item">
+
+
+
+        <div class="portfolio-caption">
+          <h4><%= @book.name %></h4>
+          <%@book.authors.each do |author| %>
+            <p class="text-muted">Author Name:<%=author.name%></p>
+          <%end%>
+          <p class="text-muted">Description:<%=@book.description%></p>
+
+          <p class="text-muted">Price:<%=@book.price%></p>
+          <p class="text-muted">ISBN:<%=@book.isbn%></p>
+
+          <p style="margin-top: 10px">
+            <%=image_tag(@book.image.url, :alt => "", :class => "img-fluid") %>
+          </p>
+          <p><%= link_to 'Edit', edit_book_path(@book) %> | <%= link_to 'Back', books_path %></p>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+

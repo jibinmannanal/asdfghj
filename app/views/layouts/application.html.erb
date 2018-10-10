@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.0,minimum-scale=1.0">
+    <meta name="keywords" content="Easy Monitoring tool,server monitoring,online performance tool,website performance checker,website analyzer,website monitoring tool,online site analysis tool,free site analysis,web speed analyser,website response time test,free website monitoring tool,domain monitoring tool,website checker tool,site speed test,website performance analysis">
+    <meta name="description" content="Netthrob automatically monitors your website every minute and instantly alerts in case of downtime via sms.">
+
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div id="wrapper_header">
+    <div class="row">
+      <%= render "/layouts/header" %>
+    </div>
+  </div>
+    <%= yield %>
+  <%= render "/layouts/footer" %>
+  </body>
+
+</html>
+

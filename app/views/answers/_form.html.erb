@@ -1,0 +1,23 @@
+
+
+  <%= form_with(model: answer, local: true) do |f| %>
+  <%= render 'shared/errors', object: answer %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pdf %>
+    <%= f.file_field :pdf, class: 'form-control'%>
+  </div>
+    <div class="form-group">
+      <%= f.label "Active" %>
+      <%= f.check_box :status%>
+    </div>
+    <div class="form-group">
+  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+    </div>
+<% end %>
+  </div>

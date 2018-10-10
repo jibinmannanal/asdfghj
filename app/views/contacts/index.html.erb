@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contacts</h1>
+
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+<% @contacts.each do |contact| %>
+<div class="col-md-4 col-sm-6 portfolio-item">
+
+
+
+  <div class="portfolio-caption">
+    <h4><%= contact.name %></h4>
+    <p class="text-muted">Phone:<%= contact.phone %></p>
+    <p class="text-muted">Email:<%= contact.email %></p>
+    <p class="text-muted">Message:<%= contact.message %></p>
+    <p><%= link_to 'Show', contact %></p>
+    <p><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+  </div>
+
+</div>
+<% end %>
+
+    </div>
+
+  </div>
+  </div>
+  <%= will_paginate @contacts%>
+</section>

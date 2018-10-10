@@ -1,0 +1,36 @@
+
+<body id="page-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <%#= link_to(image_tag("logo.jpg", :alt => "logo", :class => "navbar-brand js-scroll-trigger"), root_path, :method => :get) %>
+
+    <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>-->
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+
+          <a class="nav-link js-scroll-trigger" href="<%= current_page?(root_path) ? '#services' : '/#services' %>">What We Offer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="<%= current_page?(root_path) ? '#portfolio' : '/#portfolio' %>">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="<%= current_page?(root_path) ? '#about' : '/#about' %>">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="<%= current_page?(root_path) ? '#team' : '/#team' %>">Authors</a>
+        </li>
+        <li  class="nav-item"><%= active_link_to 'Answer Key', home_anwser_key_path,:class => "nav-link js-scroll-trigger" %></li>
+        <li  class="nav-item"><%= active_link_to 'Traders', home_trades_path,:class => "nav-link js-scroll-trigger" %></li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="<%= current_page?(root_path) ? '#contact' : '/#contact' %>">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

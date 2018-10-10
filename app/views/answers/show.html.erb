@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-4 col-sm-6 portfolio-item">
+
+
+
+  <%=link_to image_tag("image.png", :alt => "", :class => "img-fluid") , @answer.pdf.url, target: '_blank' %>
+
+
+
+  <div class="portfolio-caption">
+    <h4>Title:<%=@answer.title%></h4>
+    <p class="text-muted">Status:<%=@answer.status%></p>
+
+    <p><%= link_to 'Edit', edit_answer_path(@answer) %> | <%= link_to 'Back', answers_path %></p>
+
+  </div>
+</div>
+

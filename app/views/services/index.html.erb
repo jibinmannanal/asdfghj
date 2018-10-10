@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Services</h1>
+<div class="link">
+<%= link_to 'New Service', new_service_path %>
+</div>
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+      <% @services.each do |service| %>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+
+
+
+          <div class="portfolio-caption">
+            <h4><%= service.title %></h4>
+            <p class="text-muted">Description:<%= service.description %></p>
+            <p class="text-muted">Status:<%= service.status %></p>
+
+            <p><%= link_to 'Show', service %></p>
+            <p><%= link_to 'Edit', edit_service_path(service) %></p>
+            <p><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+          </div>
+
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+  </div>
+  <%= will_paginate @services%>
+</section>

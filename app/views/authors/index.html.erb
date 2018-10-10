@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Authors</h1>
+<div class="link">
+<%= link_to 'Add New Author',  new_author_path %>
+</div>
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+<%= render @authors %>
+    </div>
+
+  </div>
+  </div>
+  <%= will_paginate @authors%>
+</section>

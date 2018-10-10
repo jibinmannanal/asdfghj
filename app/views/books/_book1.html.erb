@@ -1,0 +1,16 @@
+<h2 class="text-uppercase"><%=@book.name%></h2>
+<%@book.authors.each do |author| %>
+<p class="item-intro text-muted"><%=author.name%></p>
+  <% end %>
+<%= image_tag(@book.image.url,:alt => "", :class => "img-fluid d-block mx-auto") %>
+<!--<img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">-->
+<p>
+  <%=@book.description%></p>
+<ul class="list-inline">
+  <li>ISBN:<%=@book.isbn%></li>
+  <li>Price: <%=@book.price%></li>
+
+</ul>
+<button class="btn btn-primary" data-dismiss="modal" type="button">
+  <i class="fas fa-times"></i>
+  Close</button>

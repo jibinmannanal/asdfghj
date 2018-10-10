@@ -1,0 +1,64 @@
+
+
+
+<%= form_with(model: book, local: true) do |f| %>
+  <%= render 'shared/errors', object: book %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field  :price, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :isbn %>
+    <%= f.text_field  :isbn, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field  :description, class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Active" %>
+    <%= f.check_box :status%>
+  </div>
+  <div class="alert-contact-block col-md-12 col-sm-12 col-xs-12 no-padding">
+    <h5>Authors of this book</h5>
+    <div class="alert-contact-content col-md-12 col-sm-12 col-xs-12 no-padding">
+      <% user=Author.where(status:true).each_slice(2).to_a %>
+      <% user.each do |nu1| %>
+        <div class="alert-contact col-md-12 col-sm-12 col-xs-12 no-padding">
+          <% nu1.each do |nu| %>
+            <div class="alert-outer col-md-6 col-sm-6 col-xs-12 no-padding">
+
+
+              <div class="alert-method col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="advertise_loginFields">
+                  <p>
+
+                    <%= check_box_tag 'book[author_book_ids][]', nu.id, book.author_ids.include?(nu.id) %>
+                    <span class="checkbox-style"></span> <%= truncate(nu.name.upcase, length: 20, omission: ' ...') %>
+                  </p>
+                </div><!--advertise_loginFields-->
+
+              </div>
+
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div><!--ALERT-CONTACT
+  <!--ALERT-CONTACT-CONTENT--><a href="#nogo">
+  </a></div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control'%>
+  </div>
+  <%= f.submit 'Save', class: 'btn btn-primary' %>
+<% end %>
+</div>

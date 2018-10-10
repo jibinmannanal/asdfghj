@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12 col-sm-12 portfolio-item">
+
+
+
+        <div class="portfolio-caption">
+          <h4><%= @about.title %></h4>
+          <p class="text-muted">Description:<%= @about.description %></p>
+          <p class="text-muted">Status:<%= @about.status %></p>
+          <%=image_tag(@about.image.url, :alt => "", :class => "img-fluid") %>
+
+
+          <p><%= link_to 'Edit', edit_about_path(@about) %> | <%= link_to 'Back', abouts_path %></p>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+

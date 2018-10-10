@@ -1,0 +1,20 @@
+
+<div class="col-md-4 col-sm-6 portfolio-item">
+
+<p style="margin-top: 10px">
+    <%=link_to image_tag(author.image.url, :alt => "", :class => "img-fluid") , author.image.url, target: '_blank' %>
+
+</p>
+
+  <div class="portfolio-caption">
+    <h4><%=author.name%></h4>
+    <p class="text-muted"><%=author.occupation%></p>
+    <p class="text-muted"><%=author.qualification%></p>
+    <p class="text-muted"><%=author.description%></p>
+    <p><%= link_to 'Show',author %></p>
+    <p><%= link_to 'Edit', edit_author_path(author) %></p>
+    <p><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+  </div>
+
+</div>
