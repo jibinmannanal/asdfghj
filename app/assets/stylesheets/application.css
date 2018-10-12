@@ -23,7 +23,6 @@
   *= require _team
   *= require _timeline
   *= require _variables
-
-
-  *= require_self
+  *= require brands.min
+   *= require_self
  */
