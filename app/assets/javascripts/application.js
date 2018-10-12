@@ -13,7 +13,7 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require activestorage
+
 
 //= require jquery-ui.min2
 //= require bootstrap.min
@@ -22,5 +22,5 @@
 //= require jqBootstrapValidation
 
 //= require bootstrap-sprockets
-//= require agency
+
 //= require_tree .

@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   layout 'admin'
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user
+  before_action :logged_in_user, only: [ :edit, :update, :destroy,:index, :create]
   def index
     @books = Book.order('created_at').paginate(:page => params[:page], :per_page => 10)
   end
