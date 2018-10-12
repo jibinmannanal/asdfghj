@@ -29,7 +29,7 @@ $primary: #fed136 !default;
 // Styling for the contact section
 section#contact {
   background-color: $gray-900;
-  background-image: url('./map-image.png');
+  background-image:image-url('map-image.png');
   background-repeat: no-repeat;
   background-position: center;
   .section-heading {
