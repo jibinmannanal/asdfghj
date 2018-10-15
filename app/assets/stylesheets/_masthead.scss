@@ -29,7 +29,7 @@ $primary: #fed136 !default;
 // Styling for the masthead
 header.masthead {
   text-align: center;
-  color: white;
+  color: $primary;
   background-image:image-url('header-bg.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;

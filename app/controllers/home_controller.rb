@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @contact = Contact.new
     @banner=Banner.where(status: true).last
-    @authors=Author.where(status: true).last(3)
+    @authors=Author.where(status: true)
     @books=Book.where(status: true)
     @abouts=About.where(status: true).order('time')
     @services=Service.where(status: true).limit(6)

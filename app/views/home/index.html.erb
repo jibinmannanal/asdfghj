@@ -19,21 +19,66 @@
         <h2 class="section-heading text-uppercase">What We Offer</h2>
         </div>
     </div>
-    <% services=@services.each_slice(3).to_a %>
 
-    <% services.each do |service| %>
-      <div class="row text-center">
+    <div class="row">
+    <div id="qwe" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <% services=@services.each_slice(3).to_a %>
+        <% services.each_with_index  do | service,index| %>
 
-        <% service.each do |s| %>
-      <div class="col-md-4">
+          <li data-target="#qwe" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
 
-        <h4 class="service-heading"><%=s.title%></h4>
-        <p class="text-muted"><%=s.description%></p>
+        <% end %>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+
+        <% services=@services.each_slice(3).to_a %>
+
+        <% services.each_with_index  do | service,index| %>
+
+        <div class="<%= index == 0 ? 'carousel-item active' : 'carousel-item' %>">
+          <div class="row">
+            <% service.each do |s| %>
+
+            <div class="col-md-4">
+
+              <h4 class="service-heading"><%=s.title%></h4>
+              <p class="text-muted"><%=s.description%></p>
+            </div>
+
+
+
+
+
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+
+
+
+
+
       </div>
-     <% end %>
+
+
+      <a class="left carousel-control" href="#qwe" role="button" data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#qwe" role="button" data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      </div>
     </div>
-    <% end %>
-  </div>
+
+
+    </div>
+
+
+
+
 </section>
 
 <!-- Portfolio Grid -->
@@ -120,6 +165,11 @@
 </section>
 
 <!-- Team -->
+
+
+
+
+
 <section class="bg-light" id="team">
   <div class="container">
     <div class="row">
@@ -129,40 +179,80 @@
       </div>
     </div>
     <div class="row">
-      <% @authors.each do |author| %>
-      <div class="<%= @authors.length > 2 ? 'col-sm-4' : 'col-sm-6' %>">
-        <div class="team-member">
-      <%= image_tag(author.image.url, :alt => "", :class => "mx-auto rounded-circle") %>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% authors=@authors.each_slice(3).to_a %>
 
-          <h4><%=author.name%></h4>
-          <p class="text-muted"><%=author.qualification%></p>
-          <p class="text-muted"><%=author.occupation%></p>
-          <ul class="list-inline social-buttons">
-            <% if !author.twitter_url.blank? %>
-            <li class="list-inline-item">
-              <a href="<%= author.twitter_url %>" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-              <%end %>
-            <% if !author.fb_url.blank? %>
-            <li class="list-inline-item">
-              <a href="<%= author.fb_url %>" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <%end %>
-            <% if !author.linked_in_url.blank? %>
-            <li class="list-inline-item">
-              <a href="<%= author.linked_in_url %>" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-            <%end %>
-          </ul>
+          <% authors.each_with_index  do |author, index| %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
+
+          <% end %>
+        </ol>
+        <div class="carousel-inner">
+
+          <% authors=@authors.each_slice(3).to_a %>
+
+          <% authors.each_with_index  do |author, index| %>
+
+            <div class="<%= index == 0 ? 'carousel-item active' : 'carousel-item' %>">
+              <div class="row">
+                <% author.each do |a| %>
+
+                  <div class="<%= author.length > 2 ? 'col-sm-4' : 'col-sm-6' %>">
+                    <div class="team-member">
+                      <%= image_tag(a.image.url, :alt => "", :class => "mx-auto rounded-circle") %>
+
+                      <h4><%=a.name%></h4>
+                      <p class="text-muted"><%=a.qualification%></p>
+                      <p class="text-muted"><%=a.occupation%></p>
+                      <ul class="list-inline social-buttons">
+                        <% if !a.twitter_url.blank? %>
+                          <li class="list-inline-item">
+                            <a href="<%= a.twitter_url %>" target="_blank">
+                              <i class="fab fa-twitter"></i>
+                            </a>
+                          </li>
+                        <%end %>
+                        <% if !a.fb_url.blank? %>
+                          <li class="list-inline-item">
+                            <a href="<%= a.fb_url %>" target="_blank">
+                              <i class="fab fa-facebook-f"></i>
+                            </a>
+                          </li>
+                        <%end %>
+                        <% if !a.linked_in_url.blank? %>
+                          <li class="list-inline-item">
+                            <a href="<%= a.linked_in_url %>" target="_blank">
+                              <i class="fab fa-linkedin-in"></i>
+                            </a>
+                          </li>
+                        <%end %>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                <% end %>
+              </div>
+            </div>
+
+
+          <% end %>
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="icon-prev" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="icon-next" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+
         </div>
+
+
+
       </div>
-     <% end %>
     </div>
 
   </div>

@@ -22,3 +22,10 @@ $primary: #fed136 !default;
     margin-top: 0;
   }
 }
+.carousel-indicators .active {
+  background-color: #1d1c1c;
+}
+.carousel-indicators li {
+
+  background-color: rgba(249, 4, 4, 0.5);
+}
