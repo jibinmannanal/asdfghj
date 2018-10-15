@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
-  layout 'admin'
+   layout 'admin'
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show,:index]
+  before_action :logged_in_user, only: [:show,:index,:edit,:update]
   # GET /contacts
   # GET /contacts.json
   def index
@@ -27,13 +27,18 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
 
-    if @contact.save
-    if request.xhr?
-      flash[:notice] = "Check Saved Successfully."
-      flash.keep(:notice)
-      render :json => {status: "sucess", messages: "<p>Check Saved Successfully.</p>"}.to_json
-    end
+    respond_to do |format|
+      if @contact.save
+        UserMailer.notification_mail(@contact).deliver
+        # format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.json { render :show, status: :created, location: @contact}
+        format.js
+      else
+        format.html { render :new }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
+    end
+
   end
 
   # PATCH/PUT /contacts/1

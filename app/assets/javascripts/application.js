@@ -17,10 +17,8 @@
 
 //= require jquery-ui.min2
 //= require bootstrap.min
-//= require popper.min
 //= require contact_me
-//= require jqBootstrapValidation
+//= require jqBootstrapValidation.min
 
-//= require bootstrap-sprockets
 
 //= require_tree .

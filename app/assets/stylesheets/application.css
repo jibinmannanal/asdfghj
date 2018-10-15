@@ -24,5 +24,6 @@
   *= require _timeline
   *= require _variables
   *= require brands.min
+  *= require solid.min
    *= require_self
  */
