@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
-  has_attached_file :pdf, :styles => { :thumb => ["140x140>", :jpg] }
+  has_attached_file :pdf
 
 
   validates_attachment :pdf,
