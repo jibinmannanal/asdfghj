@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
+  skip_before_action :verify_authenticity_token, :only => [:destroy]
+
   layout 'admin'
   def new
+    if logged_in?
+      redirect_to answers_path
+    end
   end
   def create
     user = User.find_by(email: params[:session][:email].downcase)

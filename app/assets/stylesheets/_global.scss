@@ -59,7 +59,7 @@ h6 {
 }
 
 section {
-  padding: 100px 0;
+  padding: 90px 0;
   h2.section-heading {
     font-size: 40px;
     margin-top: 0;
@@ -69,14 +69,14 @@ section {
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
-    margin-bottom: 75px;
+    margin-bottom: 30px;
     text-transform: none;
     @include serif-font;
   }
 }
 @media(min-width:768px) {
   section {
-    padding: 150px 0;
+    padding:125px 0;
   }
 }
 
