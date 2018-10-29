@@ -7,9 +7,12 @@
 <p>
   <%=@book.description%></p>
 <ul class="list-inline">
-  <li>ISBN:<%=@book.isbn%></li>
-  <li>Price: <%=@book.price%></li>
-
+  <% if !@book.isbn.blank? %>
+       <li>ISBN:<%=@book.isbn%></li>
+    <% end %>
+  <% if !@book.price.blank?  %>
+<li>Price: <%=@book.price%></li>
+  <% end %>
 </ul>
 <button class="btn btn-primary" data-dismiss="modal" type="button">
   <i class="fas fa-times"></i>

@@ -73,3 +73,32 @@ section#contact {
     @include heading-font;
   }
 }
+.text-muted {
+  color: #212529!important;
+}
+
+
+.parent {
+  background: image-url('brain.jpeg') center center fixed;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -100;
+}
+.bg-answer{
+  background: image-url('ans.jpeg') center center fixed;
+
+
+
+
+}
+.bg-trade{
+  background: image-url('brtrade.jpeg') center center fixed;
+
+color: #f8f9fa;
+
+
+}
